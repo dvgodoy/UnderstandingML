@@ -8,17 +8,17 @@
     "icons": [
       
         {
-          "src": "/assets/logos/logo@16px.png",
+          "src": "/UnderstandingML/assets/logos/logo@16px.png",
           "sizes": "16x16"
         },
       
         {
-          "src": "/assets/logos/logo@32px.png",
+          "src": "/UnderstandingML/assets/logos/logo@32px.png",
           "sizes": "32x32"
         },
       
         {
-          "src": "/assets/logos/logo@96px.png",
+          "src": "/UnderstandingML/assets/logos/logo@96px.png",
           "sizes": "96x96"
         }
       

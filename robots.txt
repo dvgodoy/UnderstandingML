@@ -1,1 +1,1 @@
-Sitemap: https://dvgodoy.github.io/UnderstandingML/UnderstandingML/sitemap.xml
+Sitemap: https://dvgodoy.github.io/UnderstandingML/sitemap.xml
