@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/01.%20linear%20regression/2019/07/01/linear-regression/</loc>
+<loc>https://dvgodoy.github.io/UnderstandingML/01.%20linear%20regression/2019/07/01/linear-regression/</loc>
 <lastmod>2019-07-01T00:00:00+01:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/book/</loc>
+<loc>https://dvgodoy.github.io/UnderstandingML/book/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/contents/</loc>
+<loc>https://dvgodoy.github.io/UnderstandingML/contents/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/blog/</loc>
+<loc>https://dvgodoy.github.io/UnderstandingML/blog/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>https://dvgodoy.github.io/UnderstandingML/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/search/</loc>
+<loc>https://dvgodoy.github.io/UnderstandingML/search/</loc>
 </url>
 </urlset>
