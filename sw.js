@@ -1,8 +1,8 @@
-const version = '20190725173934';
+const version = '20190725175036';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/01.%20linear%20regression/2019/07/01/linear-regression/","/book/","/contents/","/blog/","/","/manifest.json","/offline/","/assets/search.json","/search/","/assets/styles.css","/thanks/","/redirects.json","/feed.xml","/sitemap.xml","/robots.txt","/UnderstandingML/assets/logos/logo.png", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return ["/01.%20linear%20regression/2019/07/01/linear-regression/","/book/","/contents/","/blog/","/","/manifest.json","/offline/","/assets/search.json","/search/","/assets/styles.css","/thanks/","/redirects.json","/feed.xml","/sitemap.xml","/robots.txt","/assets/logos/logo.png", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 
