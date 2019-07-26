@@ -59,8 +59,8 @@ function fit(x, y, a, b) {
 
 var data1 = [{'type': 'scatter',
   'name': 'Data',
-  'x': x,
-  'y': y,
+  'x': x.tolist(),
+  'y': y.tolist(),
   'hoverinfo': 'x+y',
   'marker': {'opacity': 1.0,
    'symbol': 'circle',
