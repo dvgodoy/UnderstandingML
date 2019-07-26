@@ -1,5 +1,6 @@
 var x = nj.array([1, 1.7, 2, 2.5, 3.1]);
 var y = x.multiply(1.45).add(nj.array([-.2, .165, .3, -.35, .15]));
+var x = x.subtract(.06);
 var sse_total = y.subtract(y.mean()).pow(2).sum();
 
 function calc_intercept(xm, ym, slope) {
@@ -56,10 +57,10 @@ function fit(x, y, a, b) {
 }
 
 
-var data = [{'type': 'scatter',
+var data1 = [{'type': 'scatter',
   'name': 'Data',
-  'x': [1. , 1.7, 2. , 2.5, 3.1],
-  'y': [1.25 , 2.63 , 3.2  , 3.275, 4.645],
+  'x': x,
+  'y': y,
   'hoverinfo': 'x+y',
   'marker': {'opacity': 1.0,
    'symbol': 'circle',
@@ -67,7 +68,6 @@ var data = [{'type': 'scatter',
   'line': {'color': 'black'},
   'mode': 'markers',
   'fillcolor': 'rgba(255,79,38,0.600000)',
-  'legendgroup': 'f1',
   'showlegend': true,
   'xaxis': 'x1',
   'yaxis': 'y1'},
@@ -81,8 +81,8 @@ var data = [{'type': 'scatter',
   'yaxis': 'y1'},
  {'type': 'scatter',
   'name': 'Mean',
-  'x': [2.06],
-  'y': [3.0],
+  'x': [x.mean()],
+  'y': [y.mean()],
   'mode': 'markers',
   'marker': {'size': 10, 'color': 'black', 'symbol': 'cross', 'opacity': 0.7}},
  {'type': 'scatter',
@@ -90,74 +90,53 @@ var data = [{'type': 'scatter',
   'x': [0],
   'y': [4.03],
   'mode': 'markers',
-  'marker': {'color': 'red'}},
- {'type': 'scatter',
+  'marker': {'color': 'red'}},];
+
+var data2 = [{'type': 'scatter',
   'name': 'Point 1',
   'mode': 'lines',
-  'x': [1, 1],
-  'y': [5.1984, 0],
+  'y': [1, 1],
+  'x': [5.1984, 0],
   'showlegend': false,
-  'line': {'color': 'rgba(31, 119, 180,.5)', 'width': 15},
-  'xaxis': 'x2',
-  'yaxis': 'y2'},
+  'line': {'color': 'rgba(31, 119, 180,.5)', 'width': 15}},
  {'type': 'scatter',
   'name': 'Point 2',
   'mode': 'lines',
-  'x': [2, 2],
-  'y': [0.3025, 0],
+  'y': [2, 2],
+  'x': [0.3025, 0],
   'showlegend': false,
-  'line': {'color': 'rgba(255, 127, 14,.5)', 'width': 15},
-  'xaxis': 'x2',
-  'yaxis': 'y2'},
+  'line': {'color': 'rgba(255, 127, 14,.5)', 'width': 15}},
  {'type': 'scatter',
   'name': 'Point 3',
   'mode': 'lines',
-  'x': [3, 3],
-  'y': [0.0289, 0],
+  'y': [3, 3],
+  'x': [0.0289, 0],
   'showlegend': false,
-  'line': {'color': 'rgba(44, 160, 44,.5)', 'width': 15},
-  'xaxis': 'x2',
-  'yaxis': 'y2'},
+  'line': {'color': 'rgba(44, 160, 44,.5)', 'width': 15}},
  {'type': 'scatter',
   'name': 'Point 4',
   'mode': 'lines',
-  'x': [4, 4],
-  'y': [0.245, 0],
+  'y': [4, 4],
+  'x': [0.245, 0],
   'showlegend': false,
-  'line': {'color': 'rgba(214, 39, 40,.5)', 'width': 15},
-  'xaxis': 'x2',
-  'yaxis': 'y2'},
+  'line': {'color': 'rgba(214, 39, 40,.5)', 'width': 15}},
  {'type': 'scatter',
   'name': 'Point 5',
   'mode': 'lines',
-  'x': [5, 5],
-  'y': [4.6872, 0],
+  'y': [5, 5],
+  'x': [4.6872, 0],
   'showlegend': false,
-  'line': {'color': 'rgba(148, 103, 189,.5)', 'width': 15},
-  'xaxis': 'x2',
-  'yaxis': 'y2'}];
+  'line': {'color': 'rgba(148, 103, 189,.5)', 'width': 15}}];
 
-var layout = {'width': 800,
- 'height': 370,
- 'xaxis1': {'domain': [0.0, 0.66],
-  'anchor': 'y1',
-  'title': 'x',
+var layout1 = {
+ 'showlegend': true,
+ 'legend': {'orientation': 'h', 'y': -.2},  
+ 'xaxis': {'title': 'x',
   'range': [-3, 7]},
- 'yaxis1': {'domain': [0.0, 1.0],
-  'anchor': 'x1',
-  'title': 'y',
+ 'yaxis': {'title': 'y',
   'range': [-1.2, 5.8]},
- 'xaxis2': {'domain': [0.75, 1.0],
-  'anchor': 'y2',
-  'title': 'Data Points',
-  'range': [0, 6],
-  'showticklabels': false},
- 'yaxis2': {'domain': [0.17, 1.0],
-  'anchor': 'x2',
-  'title': 'Squared Error',
-  'range': [0, 6.0]},
  'title': '',
- 'margin': {'t': 50, 'b': 50, 'l': 50, 'r': 50},
+ 'margin': {'t': 50, 'b': 20, 'l': 50, 'r': 50},
  'shapes': [{'type': 'rect',
    'x0': 1.0,
    'y0': 1.25,
@@ -195,6 +174,17 @@ var layout = {'width': 800,
    'line': {'color': 'rgba(148, 103, 189,.5)'}}],
 };
 
+var layout2 = {
+ 'height': 250,
+ 'xaxis': {'title': 'Data Points',
+  'range': [0, 6]},
+ 'yaxis': {'title': 'Squared Error',
+  'range': [0, 6],
+  'showticklabels': false},
+ 'title': '',
+ 'margin': {'t': 10, 'b': 100, 'l': 50, 'r': 50},
+};
+
 function valueOutput(element) { 
 	var value = element.value; 
 	var output = element.parentNode.getElementsByTagName('output')[0]; 
@@ -208,32 +198,34 @@ function changePlot() {
   if (pegged.checked) {
   	slider_b = undefined;
   }
-  var tester = document.getElementById("tester");
+  var tester1 = document.getElementById("tester1");
+  var tester2 = document.getElementById("tester2");
   fitted = fit(x, y, slider_a, slider_b);
   // intercept
-  tester.data[3].y = [fitted[1]];
+  tester1.data[3].y = [fitted[1]];
   if (pegged.checked) {
   	$('#slider_b').val(fitted[1]).change();
   }
   // fit line
   xrange_y = estimate(xrange, fitted[0], fitted[1], (slider_a == 0)).tolist();
-  tester.data[1].y = xrange_y;
+  tester1.data[1].y = xrange_y;
   // shapes
   estimator = estimate(x, fitted[0], fitted[1], (slider_a == 0));
   shapes = build_shapes(x, y, estimator, (slider_a == 0));
   for (i = 0; i < shapes.length; i++) {
-    tester.layout.shapes[i] = shapes[i];
+    tester1.layout.shapes[i] = shapes[i];
   }
   // errors
   errors = y.subtract(estimator);
   errors = errors.pow(2);
   for (i = 0; i < x.size; i++) {
-    tester.data[i + 4].y = [errors.get(i), 0];
+    tester2.data[i].x = [errors.get(i), 0];
   }
   // stats
   sse = errors.sum();
   mse = errors.mean();
   r2 = 1 - (sse / sse_total);
-  tester.layout.xaxis2.title = 'SSE = ' + sse.toFixed(4) + '\nMSE = ' + mse.toFixed(4) + '\nR2 = ' + r2.toFixed(4);
-  Plotly.redraw(tester);
+  tester2.layout.xaxis.title = 'SSE = ' + sse.toFixed(4) + ' - MSE = ' + mse.toFixed(4) + ' - R2 = ' + r2.toFixed(4);
+  Plotly.redraw(tester1);
+  Plotly.redraw(tester2);
 }
