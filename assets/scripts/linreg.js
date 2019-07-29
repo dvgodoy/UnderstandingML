@@ -177,7 +177,7 @@ var layout1 = {
 };
 
 var layout2 = {
- 'height': 250,
+ 'height': 200,
  'xaxis': {'title': 'Data Points',
   'range': [0, 6]},
  'yaxis': {'title': 'Squared Error',
