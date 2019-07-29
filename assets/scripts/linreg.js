@@ -130,6 +130,8 @@ var data2 = [{'type': 'scatter',
 
 var layout1 = {
  'showlegend': true,
+ 'useResizeHandler': true,
+ 'style': {'width': "100%", 'height': "100%"},
  'legend': {'orientation': 'h', 'y': -.2},  
  'xaxis': {'title': 'x',
   'range': [-3, 7]},
